@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_Akhir
 {
-    public partial class Chat : Form
+    public partial class ChatAdmin : Form
     {
-        public Chat()
+        public ChatAdmin()
         {
             InitializeComponent();
         }
