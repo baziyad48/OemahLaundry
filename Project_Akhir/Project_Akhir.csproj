@@ -77,6 +77,12 @@
     <Compile Include="formCekStatusPemesanan.Designer.cs">
       <DependentUpon>formCekStatusPemesanan.cs</DependentUpon>
     </Compile>
+    <Compile Include="formGenerateAkun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formGenerateAkun.Designer.cs">
+      <DependentUpon>formGenerateAkun.cs</DependentUpon>
+    </Compile>
     <Compile Include="formLihatPemesanan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formCekStatusPemesanan.resx">
       <DependentUpon>formCekStatusPemesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formGenerateAkun.resx">
+      <DependentUpon>formGenerateAkun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formLihatPemesanan.resx">
       <DependentUpon>formLihatPemesanan.cs</DependentUpon>

@@ -56,15 +56,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -176,7 +172,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
+            this.textBox1.Location = new System.Drawing.Point(658, 125);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
@@ -194,7 +190,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(13, 50);
+            this.textBox2.Location = new System.Drawing.Point(658, 163);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 11);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
@@ -212,7 +208,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(13, 86);
+            this.dateTimePicker1.Location = new System.Drawing.Point(658, 197);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(149, 22);
@@ -230,7 +226,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(13, 121);
+            this.textBox3.Location = new System.Drawing.Point(658, 230);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 12;
@@ -284,11 +280,11 @@
             this.flowLayoutPanel2.Controls.Add(this.label5);
             this.flowLayoutPanel2.Controls.Add(this.label6);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(13, 13);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(460, 108);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(139, 173);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(139, 147);
             this.flowLayoutPanel2.TabIndex = 17;
             // 
             // flowLayoutPanel3
@@ -298,39 +294,15 @@
             this.flowLayoutPanel3.Controls.Add(this.label9);
             this.flowLayoutPanel3.Controls.Add(this.label10);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(158, 13);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(605, 108);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(38, 173);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(38, 147);
             this.flowLayoutPanel3.TabIndex = 18;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.textBox1);
-            this.flowLayoutPanel4.Controls.Add(this.textBox2);
-            this.flowLayoutPanel4.Controls.Add(this.dateTimePicker1);
-            this.flowLayoutPanel4.Controls.Add(this.textBox3);
-            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(202, 13);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(200, 173);
-            this.flowLayoutPanel4.TabIndex = 19;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel4);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(460, 108);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(416, 195);
-            this.flowLayoutPanel5.TabIndex = 20;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(460, 309);
+            this.button1.Location = new System.Drawing.Point(460, 282);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 63);
             this.button1.TabIndex = 21;
@@ -340,7 +312,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(601, 309);
+            this.button2.Location = new System.Drawing.Point(594, 282);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 63);
             this.button2.TabIndex = 22;
@@ -353,9 +325,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 450);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.flowLayoutPanel3);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.flowLayoutPanel5);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "formLihatPemesanan";
@@ -367,10 +344,8 @@
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
-            this.flowLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -403,8 +378,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
