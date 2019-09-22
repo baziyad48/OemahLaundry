@@ -107,6 +107,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formCekStatusPemesanan.resx">
       <DependentUpon>formCekStatusPemesanan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
