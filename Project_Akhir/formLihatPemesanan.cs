@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,12 @@ namespace Project_Akhir
     public partial class formLihatPemesanan : Form
     {
         ListViewItem item;
+        string id, date;
 
         public formLihatPemesanan()
         {
             InitializeComponent();
+
             listView1.View = View.Details;
             listView1.FullRowSelect = true;
         }
@@ -70,9 +73,47 @@ namespace Project_Akhir
             }
         }
 
-        //FUNGSI UPDATE
+        
         private void button2_Click(object sender, EventArgs e)
         {
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
+            string query = "UPDATE pemesanan SET berat = '" + textBox1.Text + "', harga = '" + textBox2.Text + "', tanggal_keluar = '"+ dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + "', `status` = '" + textBox3.Text + "' WHERE id_pemesanan = " + id;
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                int result = commandDatabase.ExecuteNonQuery();
+
+                if (result > 0)
+                {
+                    MessageBox.Show("Data berhasil disimpan");
+                }
+                else
+                {
+                    MessageBox.Show("Data gagal disimpan");
+
+                }
+
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBox1.Text = listView1.SelectedItems[0].SubItems[5].Text;
+            textBox2.Text = listView1.SelectedItems[0].SubItems[6].Text;
+            textBox3.Text = listView1.SelectedItems[0].SubItems[9].Text;
+            id = listView1.SelectedItems[0].SubItems[0].Text;
+            dateTimePicker1.Value = Convert.ToDateTime(listView1.SelectedItems[0].SubItems[8].Text);
+
             
         }
     }

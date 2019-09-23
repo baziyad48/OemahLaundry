@@ -111,6 +111,7 @@
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             // 
             // columnHeader1
             // 
@@ -213,6 +214,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(149, 22);
             this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePicker1.Value = new System.DateTime(2019, 9, 23, 15, 16, 5, 0);
             // 
             // label6
             // 
