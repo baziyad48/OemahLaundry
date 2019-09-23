@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -48,6 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.17\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -61,23 +65,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatAdmin.cs">
+    <Compile Include="FormLoginPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChatAdmin.Designer.cs">
-      <DependentUpon>ChatAdmin.cs</DependentUpon>
+    <Compile Include="FormLoginPelanggan.Designer.cs">
+      <DependentUpon>FormLoginPelanggan.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChatClient.cs">
+    <Compile Include="FormLoginPetugas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChatClient.Designer.cs">
-      <DependentUpon>ChatClient.cs</DependentUpon>
+    <Compile Include="FormLoginPetugas.Designer.cs">
+      <DependentUpon>FormLoginPetugas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormPelanggan.Designer.cs">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPemesananPetugas.cs">
       <SubType>Form</SubType>
@@ -90,20 +94,77 @@
     </Compile>
     <Compile Include="FormPemesananPelanggan.Designer.cs">
       <DependentUpon>FormPemesananPelanggan.cs</DependentUpon>
+     </Compile>
+    <Compile Include="FormPetugas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPetugas.Designer.cs">
+      <DependentUpon>FormPetugas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formGenerateAkun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formGenerateAkun.Designer.cs">
+      <DependentUpon>formGenerateAkun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formLihatPemesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLihatPemesanan.Designer.cs">
+      <DependentUpon>formLihatPemesanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formRiwayatPemesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formRiwayatPemesanan.Designer.cs">
+      <DependentUpon>formRiwayatPemesanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPilihRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPilihRole.Designer.cs">
+      <DependentUpon>FormPilihRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChatAdmin.resx">
-      <DependentUpon>ChatAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="FormLoginPelanggan.resx">
+      <DependentUpon>FormLoginPelanggan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChatClient.resx">
-      <DependentUpon>ChatClient.cs</DependentUpon>
+    <EmbeddedResource Include="FormLoginPetugas.resx">
+      <DependentUpon>FormLoginPetugas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPelanggan.resx">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPetugas.resx">
+      <DependentUpon>FormPetugas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPilihRole.resx">
+      <DependentUpon>FormPilihRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formGenerateAkun.resx">
+      <DependentUpon>formGenerateAkun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formLihatPemesanan.resx">
+      <DependentUpon>formLihatPemesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formRiwayatPemesanan.resx">
+      <DependentUpon>formRiwayatPemesanan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPemesananPetugas.resx">
       <DependentUpon>FormPemesananPetugas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPemesananPelanggan.resx">
       <DependentUpon>FormPemesananPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
