@@ -16,7 +16,7 @@ namespace Project_Akhir
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formLihatPemesanan());
+            Application.Run(new FormPilihRole());
         }
     }
 }

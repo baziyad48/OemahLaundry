@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -83,6 +83,18 @@
     <Compile Include="FormPelanggan.Designer.cs">
       <DependentUpon>FormPelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPemesananPetugas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPemesananPetugas.Designer.cs">
+      <DependentUpon>FormPemesananPetugas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPemesananPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPemesananPelanggan.Designer.cs">
+      <DependentUpon>FormPemesananPelanggan.cs</DependentUpon>
+     </Compile>
     <Compile Include="FormPetugas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formRiwayatPemesanan.resx">
       <DependentUpon>formRiwayatPemesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPemesananPetugas.resx">
+      <DependentUpon>FormPemesananPetugas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPemesananPelanggan.resx">
+      <DependentUpon>FormPemesananPelanggan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
