@@ -65,11 +65,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormLoginPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormLoginPelanggan.Designer.cs">
+      <DependentUpon>FormLoginPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoginPetugas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginPetugas.Designer.cs">
+      <DependentUpon>FormLoginPetugas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPelanggan.Designer.cs">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPetugas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPetugas.Designer.cs">
+      <DependentUpon>FormPetugas.cs</DependentUpon>
     </Compile>
     <Compile Include="formCekStatusPemesanan.cs">
       <SubType>Form</SubType>
@@ -95,14 +113,29 @@
     <Compile Include="Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPemesanan.cs">
+    <Compile Include="FormPilihRole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPemesanan.Designer.cs">
-      <DependentUpon>FormPemesanan.cs</DependentUpon>
+    <Compile Include="FormPilihRole.Designer.cs">
+      <DependentUpon>FormPilihRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormLoginPelanggan.resx">
+      <DependentUpon>FormLoginPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginPetugas.resx">
+      <DependentUpon>FormLoginPetugas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPelanggan.resx">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPetugas.resx">
+      <DependentUpon>FormPetugas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPilihRole.resx">
+      <DependentUpon>FormPilihRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formCekStatusPemesanan.resx">
       <DependentUpon>formCekStatusPemesanan.cs</DependentUpon>
     </EmbeddedResource>
