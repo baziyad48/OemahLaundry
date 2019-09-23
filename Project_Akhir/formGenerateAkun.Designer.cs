@@ -103,7 +103,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 17);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(110, 99);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(110, 92);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // flowLayoutPanel2
@@ -114,12 +114,12 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(136, 17);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(25, 99);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(25, 92);
             this.flowLayoutPanel2.TabIndex = 7;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 122);
+            this.button1.Location = new System.Drawing.Point(13, 115);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 54);
             this.button1.TabIndex = 8;

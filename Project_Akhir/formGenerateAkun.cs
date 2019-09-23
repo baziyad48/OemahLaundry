@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,28 @@ namespace Project_Akhir
         {
             textBox1.Text = RandomString(8, true);
             textBox2.Text = RandomPassword();
+
+            //QUERY MASIH SALAH
+            string connectionString = "server=127.0.0.1;port=3306;uid=root;pwd=;database=oemah_laundry;SslMode=none";
+            string query = "INSERT INTO `pelanggan` (`username`, `password`) VALUES('" + textBox1.Text + "', '" + textBox2.Text + "')";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+
+                MessageBox.Show("User succesfully registered");
+
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public int RandomNumber(int min, int max)
@@ -43,8 +66,7 @@ namespace Project_Akhir
                 return builder.ToString().ToLower();
             return builder.ToString();
         }
-
-        // Generate a random password    
+ 
         public string RandomPassword()
         {
             StringBuilder builder = new StringBuilder();
