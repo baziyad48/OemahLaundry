@@ -89,6 +89,30 @@
     <Compile Include="FormPetugas.Designer.cs">
       <DependentUpon>FormPetugas.cs</DependentUpon>
     </Compile>
+    <Compile Include="formCekStatusPemesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCekStatusPemesanan.Designer.cs">
+      <DependentUpon>formCekStatusPemesanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formGenerateAkun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formGenerateAkun.Designer.cs">
+      <DependentUpon>formGenerateAkun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formLihatPemesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLihatPemesanan.Designer.cs">
+      <DependentUpon>formLihatPemesanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPilihRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +135,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPilihRole.resx">
       <DependentUpon>FormPilihRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCekStatusPemesanan.resx">
+      <DependentUpon>formCekStatusPemesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formGenerateAkun.resx">
+      <DependentUpon>formGenerateAkun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formLihatPemesanan.resx">
+      <DependentUpon>formLihatPemesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPemesanan.resx">
+      <DependentUpon>FormPemesanan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
