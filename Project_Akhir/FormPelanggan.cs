@@ -13,9 +13,11 @@ namespace Project_Akhir
 {
     public partial class FormPelanggan : Form
     {
-        public FormPelanggan()
+        static string username;
+        public FormPelanggan(string param)
         {
             InitializeComponent();
+            username = param;
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -29,6 +31,23 @@ namespace Project_Akhir
         private void openFormPilihRole()
         {
             Application.Run(new FormPilihRole());
+        }
+
+        static private FormPemesananPelanggan frmpsnplgn;
+
+        private void inputPesananToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmpsnplgn = new FormPemesananPelanggan(username);
+            frmpsnplgn.MdiParent = this;
+            frmpsnplgn.Show();
+        }
+
+        static private FormRiwayatPemesanan frmrwytpmsn;
+        private void lihatPesananToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmrwytpmsn = new FormRiwayatPemesanan(username);
+            frmrwytpmsn.MdiParent = this;
+            frmrwytpmsn.Show();
         }
     }
 }

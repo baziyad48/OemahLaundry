@@ -12,16 +12,12 @@ namespace Project_Akhir
 {
     public partial class FormPemesananPelanggan : Form
     {
-        static string nama;
-        public FormPemesananPelanggan(string tes)
+        static string username;
+        public FormPemesananPelanggan(string param)
         {
             InitializeComponent();
-            nama = tes;
-        }
-
-        private void FormPemesananPelanggan_Load(object sender, EventArgs e)
-        {
-            MessageBox.Show(nama);
+            username = param;
+            textBox1.Text = param;
         }
     }
 }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Project_Akhir
 {
-    public partial class formGenerateAkun : Form
+    public partial class FormGenerateAkun : Form
     {
-        public formGenerateAkun()
+        public FormGenerateAkun()
         {
             InitializeComponent();
         }

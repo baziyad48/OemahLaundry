@@ -11,11 +11,15 @@ using System.Windows.Forms;
 
 namespace Project_Akhir
 {
-    public partial class formRiwayatPemesanan : Form
+    public partial class FormRiwayatPemesanan : Form
     {
-        public formRiwayatPemesanan()
+        static string username;
+        public FormRiwayatPemesanan(string param)
         {
             InitializeComponent();
+            username = param;
+            label2.Text = param;
+            MessageBox.Show(param);
         }
 
         private void button1_Click(object sender, EventArgs e)

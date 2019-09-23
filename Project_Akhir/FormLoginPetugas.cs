@@ -20,11 +20,11 @@ namespace Project_Akhir
         }
         static string connString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
         MySqlConnection conn = new MySqlConnection(connString);
-
+        static string username;
         private void button1_Click(object sender, EventArgs e)
         {
             string query = "SELECT * FROM petugas";
-            string username = textBox1.Text;
+            username = textBox1.Text;
             string password = textBox2.Text;
             Boolean check = false;
 
@@ -84,7 +84,7 @@ namespace Project_Akhir
 
         private void openFormPetugas()
         {
-            Application.Run(new FormPetugas());
+            Application.Run(new FormPetugas(username));
         }
 
         private void button2_Click(object sender, EventArgs e)

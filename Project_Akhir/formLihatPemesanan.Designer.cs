@@ -1,6 +1,6 @@
 ﻿namespace Project_Akhir
 {
-    partial class formLihatPemesanan
+    partial class FormLihatPemesanan
     {
         /// <summary>
         /// Required designer variable.

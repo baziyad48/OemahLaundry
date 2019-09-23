@@ -1,6 +1,6 @@
 ﻿namespace Project_Akhir
 {
-    partial class formGenerateAkun
+    partial class FormGenerateAkun
     {
         /// <summary>
         /// Required designer variable.

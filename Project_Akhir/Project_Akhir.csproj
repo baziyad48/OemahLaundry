@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -94,30 +94,30 @@
     </Compile>
     <Compile Include="FormPemesananPelanggan.Designer.cs">
       <DependentUpon>FormPemesananPelanggan.cs</DependentUpon>
-     </Compile>
+    </Compile>
     <Compile Include="FormPetugas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPetugas.Designer.cs">
       <DependentUpon>FormPetugas.cs</DependentUpon>
     </Compile>
-    <Compile Include="formGenerateAkun.cs">
+    <Compile Include="FormGenerateAkun.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formGenerateAkun.Designer.cs">
-      <DependentUpon>formGenerateAkun.cs</DependentUpon>
+    <Compile Include="FormGenerateAkun.Designer.cs">
+      <DependentUpon>FormGenerateAkun.cs</DependentUpon>
     </Compile>
-    <Compile Include="formLihatPemesanan.cs">
+    <Compile Include="FormLihatPemesanan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formLihatPemesanan.Designer.cs">
-      <DependentUpon>formLihatPemesanan.cs</DependentUpon>
+    <Compile Include="FormLihatPemesanan.Designer.cs">
+      <DependentUpon>FormLihatPemesanan.cs</DependentUpon>
     </Compile>
-    <Compile Include="formRiwayatPemesanan.cs">
+    <Compile Include="FormRiwayatPemesanan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formRiwayatPemesanan.Designer.cs">
-      <DependentUpon>formRiwayatPemesanan.cs</DependentUpon>
+    <Compile Include="FormRiwayatPemesanan.Designer.cs">
+      <DependentUpon>FormRiwayatPemesanan.cs</DependentUpon>
     </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
@@ -148,14 +148,14 @@
     <EmbeddedResource Include="FormPilihRole.resx">
       <DependentUpon>FormPilihRole.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formGenerateAkun.resx">
-      <DependentUpon>formGenerateAkun.cs</DependentUpon>
+    <EmbeddedResource Include="FormGenerateAkun.resx">
+      <DependentUpon>FormGenerateAkun.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formLihatPemesanan.resx">
-      <DependentUpon>formLihatPemesanan.cs</DependentUpon>
+    <EmbeddedResource Include="FormLihatPemesanan.resx">
+      <DependentUpon>FormLihatPemesanan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formRiwayatPemesanan.resx">
-      <DependentUpon>formRiwayatPemesanan.cs</DependentUpon>
+    <EmbeddedResource Include="FormRiwayatPemesanan.resx">
+      <DependentUpon>FormRiwayatPemesanan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPemesananPetugas.resx">
       <DependentUpon>FormPemesananPetugas.cs</DependentUpon>

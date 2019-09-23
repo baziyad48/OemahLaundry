@@ -12,17 +12,20 @@ using System.Windows.Forms;
 
 namespace Project_Akhir
 {
-    public partial class formLihatPemesanan : Form
+    public partial class FormLihatPemesanan : Form
     {
         ListViewItem item;
         string id, date;
+        static string username;
 
-        public formLihatPemesanan()
+        public FormLihatPemesanan(string param)
         {
             InitializeComponent();
 
             listView1.View = View.Details;
             listView1.FullRowSelect = true;
+            username = param;
+            label2.Text = param;
         }
 
         private void formLihatPesanan_Load(object sender, EventArgs e)

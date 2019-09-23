@@ -21,11 +21,12 @@ namespace Project_Akhir
             InitializeComponent();
         }
 
+        static string username;
         private void button1_Click(object sender, EventArgs e)
         {
             
             string query = "SELECT * FROM pelanggan";
-            string username = textBox1.Text;
+            username = textBox1.Text;
             string password = textBox2.Text;
             Boolean check = false;
 
@@ -84,7 +85,7 @@ namespace Project_Akhir
 
         private void openFormPelanggan()
         {
-            Application.Run(new FormPelanggan());
+            Application.Run(new FormPelanggan(username));
         }
 
         private void button2_Click(object sender, EventArgs e)

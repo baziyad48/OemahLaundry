@@ -63,6 +63,7 @@
             this.inputPesananToolStripMenuItem.Name = "inputPesananToolStripMenuItem";
             this.inputPesananToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.inputPesananToolStripMenuItem.Text = "Input Pesanan";
+            this.inputPesananToolStripMenuItem.Click += new System.EventHandler(this.inputPesananToolStripMenuItem_Click);
             // 
             // lihatPesananToolStripMenuItem
             // 
@@ -86,7 +87,7 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPetugas";
             this.Text = "Oemah Laundry";
             this.menuStrip1.ResumeLayout(false);

@@ -13,9 +13,11 @@ namespace Project_Akhir
 {
     public partial class FormPetugas : Form
     {
-        public FormPetugas()
+        static string username;
+        public FormPetugas(string param)
         {
             InitializeComponent();
+            username = param;
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,13 +33,21 @@ namespace Project_Akhir
             Application.Run(new FormPilihRole());
         }
 
-        static private formLihatPemesanan frm;
+        static private FormLihatPemesanan frm;
 
         private void lihatPesananToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm = new formLihatPemesanan();
+            frm = new FormLihatPemesanan(username);
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        static private FormPemesananPetugas frmpmsnptgs;
+        private void inputPesananToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmpmsnptgs = new FormPemesananPetugas(username);
+            frmpmsnptgs.MdiParent = this;
+            frmpmsnptgs.Show();
         }
     }
 }

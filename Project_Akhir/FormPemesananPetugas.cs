@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Project_Akhir
 {
-    public partial class FormPemesanan : Form
+    public partial class FormPemesananPetugas : Form
     {
-        public FormPemesanan()
+        static string username;
+        public FormPemesananPetugas(string param)
         {
             InitializeComponent();
+            username = param;
+
+        }
+
+        private FormGenerateAkun frmgenerate;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmgenerate = new FormGenerateAkun();
+            frmgenerate.Show();
         }
     }
 }
