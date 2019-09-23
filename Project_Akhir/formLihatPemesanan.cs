@@ -18,6 +18,8 @@ namespace Project_Akhir
         public formLihatPemesanan()
         {
             InitializeComponent();
+            listView1.View = View.Details;
+            listView1.FullRowSelect = true;
         }
 
         private void formLihatPesanan_Load(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace Project_Akhir
             listView1.Items.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
-            string query = "SELECT * FROM pemesanan";
+            string query = "SELECT pm.id_pemesanan, pt.nama, pl.nama, pm.tipe_cucian, pm.jenis_cucian, pm.berat, pm.harga, pm.tanggal_masuk, pm.tanggal_keluar, pm.`status` FROM pemesanan pm inner join petugas pt on pt.id_petugas = pm.id_petugas INNER JOIN pelanggan pl on pl.id_pelanggan = pm.id_pelanggan";
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);

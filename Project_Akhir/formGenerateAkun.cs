@@ -20,10 +20,9 @@ namespace Project_Akhir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = RandomString(8, true);
+            textBox1.Text = RandomString(6, true);
             textBox2.Text = RandomPassword();
 
-            //QUERY MASIH SALAH
             string connectionString = "server=127.0.0.1;port=3306;uid=root;pwd=;database=oemah_laundry;SslMode=none";
             string query = "INSERT INTO `pelanggan` (`username`, `password`) VALUES('" + textBox1.Text + "', '" + textBox2.Text + "')";
 
@@ -34,9 +33,16 @@ namespace Project_Akhir
             try
             {
                 databaseConnection.Open();
-                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                int result = commandDatabase.ExecuteNonQuery();
+                
+                if(result > 0)
+                {
+                    MessageBox.Show("User succesfully registered");
+                } else
+                {
+                    MessageBox.Show("User failed registered");
 
-                MessageBox.Show("User succesfully registered");
+                }
 
                 databaseConnection.Close();
             }

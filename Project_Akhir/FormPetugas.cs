@@ -30,5 +30,14 @@ namespace Project_Akhir
         {
             Application.Run(new FormPilihRole());
         }
+
+        static private formLihatPemesanan frm;
+
+        private void lihatPesananToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm = new formLihatPemesanan();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

@@ -119,12 +119,12 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "id_pelanggan";
+            this.columnHeader2.Text = "nama_pelanggan";
             this.columnHeader2.Width = 118;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "id_petugas";
+            this.columnHeader3.Text = "nama_petugas";
             this.columnHeader3.Width = 103;
             // 
             // columnHeader4
