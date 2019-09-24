@@ -13,17 +13,33 @@ namespace Project_Akhir
 {
     public partial class Profile : Form
     {
-        
+        static readonly string rule = "datasource=127.0.0.1;port=3306;username=root;password=wil;database=test;SslMode=none";
+        MySqlConnection CONNECTION = new MySqlConnection(Profile.rule);
+
+        EditProfile prf;
+        Riwayat rwt;
+
         public Profile()
         {
             InitializeComponent();
-            string rule = "datasource=127.0.0.1;port=3306;username=root;password=wil;database=test;SslMode=none";
-            MySqlConnection CONNECTION = new MySqlConnection(rule);
+            prf = new EditProfile();
+            rwt = new Riwayat();
         }
 
         private void editProfile_Click(object sender, EventArgs e)
         {
+            if (prf != null)
+            {
+                prf.Show();
+            }
+        }
 
+        private void riwayat_Click(object sender, EventArgs e)
+        {
+            if (rwt != null)
+            {
+                rwt.Show();
+            }
         }
     }
 }
