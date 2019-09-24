@@ -65,17 +65,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatAdmin.cs">
+    <Compile Include="FormLoginPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChatAdmin.Designer.cs">
-      <DependentUpon>ChatAdmin.cs</DependentUpon>
+    <Compile Include="FormLoginPelanggan.Designer.cs">
+      <DependentUpon>FormLoginPelanggan.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChatClient.cs">
+    <Compile Include="FormLoginPetugas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChatClient.Designer.cs">
-      <DependentUpon>ChatClient.cs</DependentUpon>
+    <Compile Include="FormLoginPetugas.Designer.cs">
+      <DependentUpon>FormLoginPetugas.cs</DependentUpon>
     </Compile>
     <Compile Include="EditProfile.cs">
       <SubType>Form</SubType>
@@ -83,11 +83,47 @@
     <Compile Include="EditProfile.Designer.cs">
       <DependentUpon>EditProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormPelanggan.Designer.cs">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPemesananPetugas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPemesananPetugas.Designer.cs">
+      <DependentUpon>FormPemesananPetugas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPemesananPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPemesananPelanggan.Designer.cs">
+      <DependentUpon>FormPemesananPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPetugas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPetugas.Designer.cs">
+      <DependentUpon>FormPetugas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateAkun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerateAkun.Designer.cs">
+      <DependentUpon>FormGenerateAkun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLihatPemesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLihatPemesanan.Designer.cs">
+      <DependentUpon>FormLihatPemesanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRiwayatPemesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRiwayatPemesanan.Designer.cs">
+      <DependentUpon>FormRiwayatPemesanan.cs</DependentUpon>
     </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
@@ -95,11 +131,11 @@
     <Compile Include="Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPemesanan.cs">
+    <Compile Include="FormPilihRole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPemesanan.Designer.cs">
-      <DependentUpon>FormPemesanan.cs</DependentUpon>
+    <Compile Include="FormPilihRole.Designer.cs">
+      <DependentUpon>FormPilihRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,20 +145,44 @@
     <Compile Include="Riwayat.Designer.cs">
       <DependentUpon>Riwayat.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ChatAdmin.resx">
-      <DependentUpon>ChatAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChatClient.resx">
-      <DependentUpon>ChatClient.cs</DependentUpon>
+    <EmbeddedResource Include="FormLoginPelanggan.resx">
+      <DependentUpon>FormLoginPelanggan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPemesanan.resx">
-      <DependentUpon>FormPemesanan.cs</DependentUpon>
+    <EmbeddedResource Include="FormLoginPetugas.resx">
+      <DependentUpon>FormLoginPetugas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPelanggan.resx">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPetugas.resx">
+      <DependentUpon>FormPetugas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPilihRole.resx">
+      <DependentUpon>FormPilihRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerateAkun.resx">
+      <DependentUpon>FormGenerateAkun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLihatPemesanan.resx">
+      <DependentUpon>FormLihatPemesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRiwayatPemesanan.resx">
+      <DependentUpon>FormRiwayatPemesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPemesananPetugas.resx">
+      <DependentUpon>FormPemesananPetugas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPemesananPelanggan.resx">
+      <DependentUpon>FormPemesananPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

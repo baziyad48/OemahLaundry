@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace Project_Akhir
 {
-    public partial class ChatClient : Form
+    public partial class FormPemesananPelanggan : Form
     {
-        public ChatClient()
+        static string username;
+        public FormPemesananPelanggan(string param)
         {
             InitializeComponent();
+            username = param;
+            textBox1.Text = param;
         }
     }
 }
