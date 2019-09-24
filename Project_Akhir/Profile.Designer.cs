@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,17 +45,17 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.alamat_user = new System.Windows.Forms.Label();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.editFoto = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.editProfile = new System.Windows.Forms.Button();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.riwayat = new System.Windows.Forms.Button();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
@@ -72,16 +70,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nama";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 154);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // flowLayoutPanel1
             // 
@@ -160,10 +148,10 @@
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel1);
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(179, 8);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(6, 19);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(299, 154);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(297, 142);
             this.flowLayoutPanel4.TabIndex = 7;
             // 
             // flowLayoutPanel2
@@ -245,26 +233,26 @@
             // 
             // flowLayoutPanel6
             // 
-            this.flowLayoutPanel6.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel6.Controls.Add(this.flowLayoutPanel4);
+            this.flowLayoutPanel6.Controls.Add(this.groupBox1);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(488, 168);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(330, 184);
             this.flowLayoutPanel6.TabIndex = 8;
             // 
-            // editFoto
+            // groupBox1
             // 
-            this.editFoto.Location = new System.Drawing.Point(8, 8);
-            this.editFoto.Name = "editFoto";
-            this.editFoto.Size = new System.Drawing.Size(75, 23);
-            this.editFoto.TabIndex = 9;
-            this.editFoto.Text = "Ganti Foto";
-            this.editFoto.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.flowLayoutPanel4);
+            this.groupBox1.Location = new System.Drawing.Point(8, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(309, 165);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Data Diri";
             // 
             // editProfile
             // 
-            this.editProfile.Location = new System.Drawing.Point(89, 8);
+            this.editProfile.Location = new System.Drawing.Point(8, 8);
             this.editProfile.Name = "editProfile";
             this.editProfile.Size = new System.Drawing.Size(134, 23);
             this.editProfile.TabIndex = 10;
@@ -274,23 +262,23 @@
             // 
             // flowLayoutPanel7
             // 
-            this.flowLayoutPanel7.Controls.Add(this.editFoto);
             this.flowLayoutPanel7.Controls.Add(this.editProfile);
             this.flowLayoutPanel7.Controls.Add(this.riwayat);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 177);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 193);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(488, 40);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(330, 40);
             this.flowLayoutPanel7.TabIndex = 11;
             // 
             // riwayat
             // 
-            this.riwayat.Location = new System.Drawing.Point(229, 8);
+            this.riwayat.Location = new System.Drawing.Point(148, 8);
             this.riwayat.Name = "riwayat";
             this.riwayat.Size = new System.Drawing.Size(99, 23);
             this.riwayat.TabIndex = 13;
             this.riwayat.Text = "Lihat Riwayat";
             this.riwayat.UseVisualStyleBackColor = true;
+            this.riwayat.Click += new System.EventHandler(this.riwayat_Click);
             // 
             // flowLayoutPanel8
             // 
@@ -299,18 +287,18 @@
             this.flowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel8.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(504, 225);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(336, 263);
             this.flowLayoutPanel8.TabIndex = 12;
             // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 245);
+            this.ClientSize = new System.Drawing.Size(359, 293);
             this.Controls.Add(this.flowLayoutPanel8);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Profile";
             this.Text = "Profile";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
@@ -319,6 +307,7 @@
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.flowLayoutPanel7.ResumeLayout(false);
             this.flowLayoutPanel8.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -328,7 +317,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label nama_user;
         private System.Windows.Forms.Label label2;
@@ -339,7 +327,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label alamat_user;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.Button editFoto;
         private System.Windows.Forms.Button editProfile;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
@@ -350,5 +337,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
