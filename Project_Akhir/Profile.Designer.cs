@@ -270,6 +270,7 @@
             // 
             // btn_close
             // 
+
             this.btn_close.Location = new System.Drawing.Point(148, 8);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(75, 23);
@@ -277,6 +278,7 @@
             this.btn_close.Text = "Tutup";
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+
             // 
             // Profile
             // 
@@ -291,12 +293,6 @@
             this.flowLayoutPanel8.ResumeLayout(false);
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
