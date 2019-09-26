@@ -26,6 +26,7 @@ namespace Project_Akhir
             listView1.FullRowSelect = true;
             username = param;
             label2.Text = param;
+            dateTimePicker1.Enabled = false;
         }
 
         private void formLihatPesanan_Load(object sender, EventArgs e)

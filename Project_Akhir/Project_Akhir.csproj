@@ -77,6 +77,12 @@
     <Compile Include="FormLoginPetugas.Designer.cs">
       <DependentUpon>FormLoginPetugas.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Riwayat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Riwayat.Designer.cs">
+      <DependentUpon>Riwayat.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLoginPelanggan.resx">
       <DependentUpon>FormLoginPelanggan.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +193,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Riwayat.resx">
+      <DependentUpon>Riwayat.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
