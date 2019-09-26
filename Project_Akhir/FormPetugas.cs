@@ -49,5 +49,18 @@ namespace Project_Akhir
             frmpmsnptgs.MdiParent = this;
             frmpmsnptgs.Show();
         }
+
+        private void laundryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        static private FormBarangCucian fBarangCucian;
+        private void tambahJenisCucianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fBarangCucian = new FormBarangCucian();
+            fBarangCucian.MdiParent = this;
+            fBarangCucian.Show();
+        }
     }
 }

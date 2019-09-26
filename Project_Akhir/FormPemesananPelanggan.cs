@@ -28,7 +28,7 @@ namespace Project_Akhir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE pemesanan SET tipe_cucian = @tipe, tanggal_masuk = @tglmsk, tanggal_keluar = @tglklr, jenis_cucian = @jenis WHERE id_pelanggan = @id";
+            string query = "UPDATE pemesanan SET tipe_cucian = @tipe, tanggal_masuk = @tglmsk, tanggal_keluar = @tglklr, barang_cucian = @jenis WHERE id_pelanggan = @id";
             string queryID = "SELECT id_pelanggan FROM pelanggan WHERE username = @user";
 
             int id_pelanggan = 0;

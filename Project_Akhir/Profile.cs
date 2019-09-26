@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,32 +13,57 @@ namespace Project_Akhir
 {
     public partial class Profile : Form
     {
-        static readonly string rule = "datasource=127.0.0.1;port=3306;username=root;password=wil;database=test;SslMode=none";
-        MySqlConnection CONNECTION = new MySqlConnection(Profile.rule);
+        List<string> userData;
+        string username;
 
-        EditProfile prf;
-        Riwayat rwt;
+        static string connString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
+        MySqlConnection conn = new MySqlConnection(connString);
 
-        public Profile()
+        public Profile(List<string> list)
         {
             InitializeComponent();
-            prf = new EditProfile();
-            rwt = new Riwayat();
+            userData = list;
+            username = list[2];
+            updateForm();
         }
 
         private void editProfile_Click(object sender, EventArgs e)
         {
-            if (prf != null)
-            {
-                prf.Show();
-            }
+            new FormEditProfile(userData).Show();
         }
 
-        private void riwayat_Click(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e)
         {
-            if (rwt != null)
+            this.Hide();
+        }
+
+        private void updateForm()
+        {
+            string query = "SELECT * FROM pelanggan WHERE username='" + username + "'";
+
+            MySqlCommand commandDatabase = new MySqlCommand(query, conn);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
             {
-                rwt.Show();
+                conn.Open();
+                reader = commandDatabase.ExecuteReader();
+                while (reader.Read())
+                {
+                    nama_user.Text = reader.GetString("nama");
+                    username_user.Text = reader.GetString("username");
+                    telepon_user.Text = reader.GetString("telepon");
+                    alamat_user.Text = reader.GetString("alamat");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

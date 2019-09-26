@@ -47,7 +47,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,9 +84,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(13, 60);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Jenis Cucian";
+            this.label7.Text = "Barang Cucian";
             // 
             // label8
             // 
@@ -119,6 +118,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 15;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.hitungJenis);
             // 
             // textBox6
             // 
@@ -126,7 +126,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(135, 20);
             this.textBox6.TabIndex = 21;
-            this.textBox6.TextChanged += new System.EventHandler(this.hitungHarga);
+            this.textBox6.TextChanged += new System.EventHandler(this.hitungBerat);
             // 
             // panel1
             // 
@@ -216,7 +216,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(135, 20);
             this.textBox2.TabIndex = 23;
-            this.textBox2.TextChanged += new System.EventHandler(this.hitungHarga);
             // 
             // label3
             // 
@@ -237,19 +236,9 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(623, 262);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Cek Harga";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(454, 262);
+            this.button3.Location = new System.Drawing.Point(553, 262);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(145, 23);
             this.button3.TabIndex = 26;
@@ -263,7 +252,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 293);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -298,7 +286,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox3;
     }

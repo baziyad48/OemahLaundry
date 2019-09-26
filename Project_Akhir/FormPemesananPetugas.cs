@@ -57,6 +57,7 @@ namespace Project_Akhir
                 MessageBox.Show(ex.Message);
             }
             dateTimePicker2.Enabled = false;
+            textBox2.Enabled = false;
         }
 
         private void hitungJenis(object sender, EventArgs e)
@@ -78,16 +79,20 @@ namespace Project_Akhir
                 case "Boneka":
                     hargaJenis = 8000;
                     dateTimePicker2.Value = dateTimePicker1.Value.AddDays(4);
-                    
                     break;
                 default:
                     MessageBox.Show("Tipe Cucian Belum Dipilih!");
                     break;
             }
-            hitungHarga(sender, e);
+            //hitungHarga(sender, e);
+            hitungTotalHarga();
         }
 
-        
+        private void hitungBerat(object sender, EventArgs e)
+        {
+            berat = int.Parse(textBox6.Text);
+            hitungTotalHarga();
+        }
 
         private void hitungTipe(object sender, EventArgs e)
         {
@@ -103,26 +108,42 @@ namespace Project_Akhir
                     MessageBox.Show("Jenis Cucian Belum Dipilih!");
                     break;
             }
-            hitungHarga(sender, e);
+            //hitungHarga(sender, e);
+            hitungTotalHarga();
         }
 
         private void hitungHarga(object sender, EventArgs e)
         {
-            if (textBox6.Text != null)
+            //if (textBox6 == null)
+            //{
+            //    berat = 0;
+            //    hargaTotal = hargaTipe + berat * hargaJenis;
+            //    textBox2.Text = hargaTotal.ToString();
+            //}
+
+            //if(hargaJenis > 0 && hargaTipe > 0 && berat > 0)
+            //{
+            //while (textBox6.Text != null)
+            //{
+            //string brt = textBox6.Text;
+            //berat = int.Parse(brt);
+            //hargaTotal = hargaTipe + berat * hargaJenis;
+            //textBox2.Text = hargaTotal.ToString();
+            //}
+            //} else
+            //{
+
+            //}
+            hitungTotalHarga();
+        }
+
+        private void hitungTotalHarga()
+        {
+            if(hargaTipe > 0 && hargaJenis > 0 && berat > 0)
             {
-                berat = 0;
-                hargaTotal = hargaTipe + berat * hargaJenis;
-                textBox2.Text = hargaTotal.ToString();
-            }
-            else
-            {
-                while (textBox6.Text == null)
-                {
-                    string brt = textBox6.Text;
-                    berat = int.Parse(brt);
-                    hargaTotal = hargaTipe + berat * hargaJenis;
-                    textBox2.Text = hargaTotal.ToString();
-                }
+
+            hargaTotal = hargaTipe + berat * hargaJenis;
+            textBox2.Text = hargaTotal.ToString();
             }
         }
 
@@ -132,7 +153,7 @@ namespace Project_Akhir
             string queryIDPet = "SELECT id_petugas FROM petugas WHERE nama = @nama";
             string queryIDPel = "SELECT id_pelanggan FROM pelanggan WHERE username = @username";
             string query = "INSERT INTO pemesanan " +
-                "(id_pelanggan, id_petugas, tipe_cucian, jenis_cucian, berat, harga, tanggal_masuk, tanggal_keluar, status) " +
+                "(id_pelanggan, id_petugas, tipe_cucian, barang_cucian, berat, harga, tanggal_masuk, tanggal_keluar, status) " +
                 "VALUES " +
                 "(@idpel, @idpet, @tipe, @jenis, @berat, @harga, @tglmsk, @tglklr, 'belum diproses')";
 
@@ -191,60 +212,6 @@ namespace Project_Akhir
                 MessageBox.Show(ex.Message);
             }
         }
-
-        
-        //Harga Tipe Cucian
-        //private void hitungTipe()
-        //{
-        //    switch (comboBox2.SelectedItem.ToString())
-        //    {
-        //        case "Cuci Kering":
-        //            hargaTipe = 3000;
-        //            break;
-        //        case "Cuci Seterika":
-        //            hargaTipe = 4000;
-        //            break;
-        //        default:
-        //            MessageBox.Show("Jenis Cucian Belum Dipilih!");
-        //            break;
-        //    }
-        //}
-        
-
-        //Harga Jenis Cucian & Tanggal Selesai
-        //private void hitungJenis()
-        //{
-        //    switch (comboBox3.SelectedItem.ToString())
-        //    {
-        //        case "Pakaian":
-        //            hargaJenis = 2000;
-        //            dateTimePicker2.Value = dateTimePicker1.Value.AddDays(3);
-        //            break;
-        //        case "Selimut":
-        //            hargaJenis = 5000;
-        //            dateTimePicker2.Value = dateTimePicker1.Value.AddDays(4);
-        //            break;
-        //        case "Seprei":
-        //            hargaJenis = 3500;
-        //            dateTimePicker2.Value = dateTimePicker1.Value.AddDays(4);
-        //            break;
-        //        case "Boneka":
-        //            hargaJenis = 8000;
-        //            dateTimePicker2.Value = dateTimePicker1.Value.AddDays(4);
-        //            break;
-        //        default:
-        //            MessageBox.Show("Tipe Cucian Belum Dipilih!");
-        //            break;
-        //    }
-        //}
-
-
-        //Hitung Harga Total
-        //private void hitungHarga()
-        //{
-        //    hargaTotal = hargaTipe + berat * hargaJenis;
-        //    textBox2.Text = hargaTotal.ToString();
-        //}
 
         private void button2_Click(object sender, EventArgs e)
         {
