@@ -65,6 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormEditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditProfile.Designer.cs">
+      <DependentUpon>FormEditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBarangCucian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBarangCucian.Designer.cs">
+      <DependentUpon>FormBarangCucian.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLoginPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,12 @@
     <Compile Include="FormRiwayatPemesanan.Designer.cs">
       <DependentUpon>FormRiwayatPemesanan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTambahPetugas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahPetugas.Designer.cs">
+      <DependentUpon>FormTambahPetugas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +151,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormEditProfile.resx">
+      <DependentUpon>FormEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBarangCucian.resx">
+      <DependentUpon>FormBarangCucian.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLoginPelanggan.resx">
       <DependentUpon>FormLoginPelanggan.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPemesananPelanggan.resx">
       <DependentUpon>FormPemesananPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahPetugas.resx">
+      <DependentUpon>FormTambahPetugas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
