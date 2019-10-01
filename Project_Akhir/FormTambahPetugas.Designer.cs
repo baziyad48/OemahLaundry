@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.btn_hapus = new System.Windows.Forms.Button();
-            this.btn_edit = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
             this.btn_tambah = new System.Windows.Forms.Button();
             this.tb_password = new System.Windows.Forms.TextBox();
             this.tb_nama = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.list_petugas = new System.Windows.Forms.ListView();
             this.No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
+            this.tb_username = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_hapus
@@ -51,15 +55,15 @@
             this.btn_hapus.UseVisualStyleBackColor = true;
             this.btn_hapus.Click += new System.EventHandler(this.btn_hapus_Click);
             // 
-            // btn_edit
+            // btn_update
             // 
-            this.btn_edit.Location = new System.Drawing.Point(528, 236);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(75, 23);
-            this.btn_edit.TabIndex = 18;
-            this.btn_edit.Text = "Edit";
-            this.btn_edit.UseVisualStyleBackColor = true;
-            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            this.btn_update.Location = new System.Drawing.Point(528, 236);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_update.TabIndex = 18;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_tambah
             // 
@@ -113,43 +117,74 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Akun Petugas";
             // 
-            // listView1
+            // list_petugas
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.list_petugas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.No,
-            this.colNama});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 61);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(393, 292);
-            this.listView1.TabIndex = 11;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.list_petugas.HideSelection = false;
+            this.list_petugas.Location = new System.Drawing.Point(16, 62);
+            this.list_petugas.Name = "list_petugas";
+            this.list_petugas.Size = new System.Drawing.Size(393, 292);
+            this.list_petugas.TabIndex = 11;
+            this.list_petugas.UseCompatibleStateImageBehavior = false;
+            this.list_petugas.View = System.Windows.Forms.View.Details;
+            this.list_petugas.SelectedIndexChanged += new System.EventHandler(this.list_petugas_SelectedIndexChanged);
             // 
             // No
             // 
-            this.No.Text = "No";
-            this.No.Width = 59;
+            this.No.Text = "id";
+            this.No.Width = 30;
             // 
-            // colNama
+            // columnHeader1
             // 
-            this.colNama.Text = "Nama Petugas";
-            this.colNama.Width = 308;
+            this.columnHeader1.Text = "Username";
+            this.columnHeader1.Width = 129;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Nama Petugas";
+            this.columnHeader2.Width = 140;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Password";
+            this.columnHeader3.Width = 88;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(443, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Username";
+            // 
+            // tb_username
+            // 
+            this.tb_username.Location = new System.Drawing.Point(528, 84);
+            this.tb_username.Name = "tb_username";
+            this.tb_username.Size = new System.Drawing.Size(156, 20);
+            this.tb_username.TabIndex = 21;
             // 
             // FormTambahPetugas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tb_username);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_hapus);
-            this.Controls.Add(this.btn_edit);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_tambah);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.tb_nama);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.list_petugas);
             this.Name = "FormTambahPetugas";
             this.Text = "FormTambahPetugas";
             this.ResumeLayout(false);
@@ -160,15 +195,19 @@
         #endregion
 
         private System.Windows.Forms.Button btn_hapus;
-        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_tambah;
         private System.Windows.Forms.TextBox tb_password;
         private System.Windows.Forms.TextBox tb_nama;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView list_petugas;
         private System.Windows.Forms.ColumnHeader No;
-        private System.Windows.Forms.ColumnHeader colNama;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tb_username;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

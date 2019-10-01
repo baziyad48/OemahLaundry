@@ -32,10 +32,10 @@
             this.pesananToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inputPesananToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lihatPesananToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.petugasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.laundryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tambahJenisCucianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.petugasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,12 +76,12 @@
             this.lihatPesananToolStripMenuItem.Text = "Lihat Pesanan";
             this.lihatPesananToolStripMenuItem.Click += new System.EventHandler(this.lihatPesananToolStripMenuItem_Click);
             // 
-            // logoutToolStripMenuItem
+            // petugasToolStripMenuItem
             // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            this.petugasToolStripMenuItem.Name = "petugasToolStripMenuItem";
+            this.petugasToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.petugasToolStripMenuItem.Text = "Petugas";
+            this.petugasToolStripMenuItem.Click += new System.EventHandler(this.petugasToolStripMenuItem_Click);
             // 
             // laundryToolStripMenuItem
             // 
@@ -95,15 +95,16 @@
             // tambahJenisCucianToolStripMenuItem
             // 
             this.tambahJenisCucianToolStripMenuItem.Name = "tambahJenisCucianToolStripMenuItem";
-            this.tambahJenisCucianToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tambahJenisCucianToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.tambahJenisCucianToolStripMenuItem.Text = "Jenis Cucian";
             this.tambahJenisCucianToolStripMenuItem.Click += new System.EventHandler(this.tambahJenisCucianToolStripMenuItem_Click);
             // 
-            // petugasToolStripMenuItem
+            // logoutToolStripMenuItem
             // 
-            this.petugasToolStripMenuItem.Name = "petugasToolStripMenuItem";
-            this.petugasToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.petugasToolStripMenuItem.Text = "Petugas";
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // FormPetugas
             // 
