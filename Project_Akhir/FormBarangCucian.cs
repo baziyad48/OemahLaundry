@@ -34,9 +34,9 @@ namespace Project_Akhir
                 int i = 1;
                 while (read.Read())
                 {
-                    string[] row = { i++, read.GetString(1), read.GetString(2)};
-                    var listViewItem = new ListViewItem(row);
-                    listView1.Items.Add(listViewItem);
+                //    string[] row = { i++, read.GetString(1), read.GetString(2)};
+                //    var listViewItem = new ListViewItem(row);
+                //    listView1.Items.Add(listViewItem);
                 }
             }
             catch (Exception ex)
@@ -58,7 +58,7 @@ namespace Project_Akhir
 
             try
             {
-                command.Parameters.AddWithValue("@id", textBox1.Text);
+//                command.Parameters.AddWithValue("@id", textBox1.Text);
                 command.Parameters.AddWithValue("@nama", textBox2.Text);
                 command.Parameters.AddWithValue("@harga", textBox3.Text);
                 conn.Open();

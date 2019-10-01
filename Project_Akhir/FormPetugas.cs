@@ -62,5 +62,10 @@ namespace Project_Akhir
             fBarangCucian.MdiParent = this;
             fBarangCucian.Show();
         }
+
+        private void petugasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormTambahPetugas().Show();
+        }
     }
 }

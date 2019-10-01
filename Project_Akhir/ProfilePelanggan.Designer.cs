@@ -1,6 +1,6 @@
 ﻿namespace Project_Akhir
 {
-    partial class Profile
+    partial class ProfilePelanggan
     {
         /// <summary>
         /// Required designer variable.
@@ -63,10 +63,10 @@
             this.flowLayoutPanel8.Controls.Add(this.flowLayoutPanel6);
             this.flowLayoutPanel8.Controls.Add(this.flowLayoutPanel7);
             this.flowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(12, 8);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
             this.flowLayoutPanel8.Size = new System.Drawing.Size(421, 225);
-            this.flowLayoutPanel8.TabIndex = 13;
+            this.flowLayoutPanel8.TabIndex = 14;
             // 
             // flowLayoutPanel6
             // 
@@ -270,7 +270,6 @@
             // 
             // btn_close
             // 
-
             this.btn_close.Location = new System.Drawing.Point(148, 8);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(75, 23);
@@ -278,21 +277,24 @@
             this.btn_close.Text = "Tutup";
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-
             // 
-            // Profile
+            // ProfilePelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 245);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(440, 244);
             this.Controls.Add(this.flowLayoutPanel8);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Profile";
-            this.Text = "Profile";
+            this.Name = "ProfilePelanggan";
+            this.Text = "ProfilePelanggan";
             this.flowLayoutPanel8.ResumeLayout(false);
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
