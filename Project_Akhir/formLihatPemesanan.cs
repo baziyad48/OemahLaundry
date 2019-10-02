@@ -26,7 +26,6 @@ namespace Project_Akhir
             listView1.FullRowSelect = true;
             username = param;
             label2.Text = param;
-            dateTimePicker1.Enabled = false;
         }
 
         private void formLihatPesanan_Load(object sender, EventArgs e)
@@ -94,11 +93,11 @@ namespace Project_Akhir
 
                 if (result > 0)
                 {
-                    MessageBox.Show("Data berhasil disimpan");
+                    MessageBox.Show("Data berhasil diupdate");
                 }
                 else
                 {
-                    MessageBox.Show("Data gagal disimpan");
+                    MessageBox.Show("Data gagal diupdate");
 
                 }
 
@@ -113,7 +112,7 @@ namespace Project_Akhir
         private void button3_Click(object sender, EventArgs e)
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
-            string query = "delete from pemesanan where = " + id;
+            string query = "delete from pemesanan where id_pemesanan=" + id;
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -126,11 +125,11 @@ namespace Project_Akhir
 
                 if (result > 0)
                 {
-                    MessageBox.Show("Data berhasil disimpan");
+                    MessageBox.Show("Data berhasil dihapus");
                 }
                 else
                 {
-                    MessageBox.Show("Data gagal disimpan");
+                    MessageBox.Show("Data gagal dihapus");
 
                 }
 
@@ -142,11 +141,49 @@ namespace Project_Akhir
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int total = 0;
+            int barang_cucian = 0;
+            int tipe_cucian = 0;
+            if (textBox4.Text.Equals("Pakaian")){
+                barang_cucian = 2000;
+            } 
+            else if (textBox4.Text.Equals("Selimut"))
+            {
+                barang_cucian = 5000;
+            }
+            else if (textBox4.Text.Equals("Seprei"))
+            {
+                barang_cucian = 35000;
+            }
+            else if (textBox4.Text.Equals("Boneka"))
+            {
+                barang_cucian = 8000;
+            }
+            Console.WriteLine("barang cucian " + barang_cucian);
+            total = barang_cucian * int.Parse(textBox1.Text);
+
+            if (textBox5.Text.Equals("Cuci Kering"))
+            {
+                tipe_cucian =3000;
+            }
+            else if (textBox5.Text.Equals("Cuci Setrika"))
+            {
+                tipe_cucian = 4000;
+            }
+            Console.WriteLine("tipe cucian " + tipe_cucian);
+            total += tipe_cucian;
+            textBox2.Text = "" + total;
+        }
+
         private void listView1_MouseClick(object sender, MouseEventArgs e)
         {
             textBox1.Text = listView1.SelectedItems[0].SubItems[5].Text;
             textBox2.Text = listView1.SelectedItems[0].SubItems[6].Text;
             textBox3.Text = listView1.SelectedItems[0].SubItems[9].Text;
+            textBox4.Text = listView1.SelectedItems[0].SubItems[4].Text;
+            textBox5.Text = listView1.SelectedItems[0].SubItems[3].Text;
             id = listView1.SelectedItems[0].SubItems[0].Text;
             dateTimePicker1.Value = Convert.ToDateTime(listView1.SelectedItems[0].SubItems[8].Text);
 

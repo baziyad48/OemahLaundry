@@ -110,7 +110,7 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "jenis_cucian";
+            this.columnHeader5.Text = "barang_cucian";
             this.columnHeader5.Width = 88;
             // 
             // columnHeader6
@@ -146,7 +146,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // formRiwayatPemesanan
+            // FormRiwayatPemesanan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,7 +154,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "formRiwayatPemesanan";
+            this.Name = "FormRiwayatPemesanan";
             this.Text = "formRiwayatPemesanan";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
