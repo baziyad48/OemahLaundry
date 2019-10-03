@@ -45,7 +45,7 @@ namespace Project_Akhir
         private void button2_Click(object sender, EventArgs e)
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
-            string query = "UPDATE pemesanan SET berat = '" + textBox1.Text + "', harga = '" + textBox2.Text + "', tanggal_keluar = '"+ dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + "', `status` = '" + comboBox1.Text + "' WHERE id_pemesanan = " + id;
+            string query = "UPDATE pemesanan SET berat = '" + textBox1.Text + "', harga = '" + textBox2.Text + "', tanggal_keluar = '"+ dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + "', `status` = '" + comboBox1.Text + "' WHERE id_pemesanan = " + textBox3.Text;
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -112,38 +112,7 @@ namespace Project_Akhir
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int total = 0;
-            int barang_cucian = 0;
-            int tipe_cucian = 0;
-            if (textBox4.Text.Equals("Pakaian")){
-                barang_cucian = 2000;
-            } 
-            else if (textBox4.Text.Equals("Selimut"))
-            {
-                barang_cucian = 5000;
-            }
-            else if (textBox4.Text.Equals("Seprei"))
-            {
-                barang_cucian = 35000;
-            }
-            else if (textBox4.Text.Equals("Boneka"))
-            {
-                barang_cucian = 8000;
-            }
-            Console.WriteLine("barang cucian " + barang_cucian);
-            total = barang_cucian * int.Parse(textBox1.Text);
-
-            if (textBox5.Text.Equals("Cuci Kering"))
-            {
-                tipe_cucian =3000;
-            }
-            else if (textBox5.Text.Equals("Cuci Setrika"))
-            {
-                tipe_cucian = 4000;
-            }
-            Console.WriteLine("tipe cucian " + tipe_cucian);
-            total += tipe_cucian;
-            textBox2.Text = "" + total;
+            cobaHitung();
         }
 
         private void listView1_MouseClick(object sender, MouseEventArgs e)
@@ -152,10 +121,14 @@ namespace Project_Akhir
             textBox2.Text = listView1.SelectedItems[0].SubItems[6].Text;
             textBox4.Text = listView1.SelectedItems[0].SubItems[4].Text;
             textBox5.Text = listView1.SelectedItems[0].SubItems[3].Text;
+            textBox3.Text = listView1.SelectedItems[0].SubItems[0].Text;
             id = listView1.SelectedItems[0].SubItems[0].Text;
-            dateTimePicker1.Value = Convert.ToDateTime(listView1.SelectedItems[0].SubItems[8].Text);
+            if(listView1.SelectedItems[0].SubItems[8].Text != "")
+            {
+                dateTimePicker1.Value = Convert.ToDateTime(listView1.SelectedItems[0].SubItems[8].Text);
+            }
 
-            
+
         }
 
         private void refresh()
@@ -182,7 +155,7 @@ namespace Project_Akhir
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader["tanggal_masuk"].ToString(), reader["tanggal_keluar"].ToString(), reader["status"].ToString() };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
                     }
@@ -192,8 +165,53 @@ namespace Project_Akhir
                     Console.WriteLine("No rows found.");
                 }
 
-                databaseConnection.Clone();
+                databaseConnection.Close();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void cobaHitung()
+        {
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            string query = "SELECT harga FROM barang_cucian WHERE nama = @nama";
+            MySqlCommand command = new MySqlCommand(query, databaseConnection);
+            command.CommandTimeout = 60;
+            MySqlDataReader reader;
+            int barang_cucian = 0;
+            int tipe_cucian = 0;
+            int total = 0;
+
+            try
+            {
+                
+                databaseConnection.Open();
+                command.Parameters.AddWithValue("@nama", textBox4.Text);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    barang_cucian = int.Parse(reader.GetString("harga"));
+
+                }
+                databaseConnection.Close();
+
+                total = barang_cucian * int.Parse(textBox1.Text);
+
+                if (textBox5.Text.Equals("Cuci Kering"))
+                {
+                    tipe_cucian = 3000;
+                }
+                else if (textBox5.Text.Equals("Cuci Setrika"))
+                {
+                    tipe_cucian = 4000;
+                }
+
+                total += tipe_cucian;
+                textBox2.Text = "" + total;
             }
             catch (Exception ex)
             {

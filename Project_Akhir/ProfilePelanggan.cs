@@ -14,6 +14,12 @@ namespace Project_Akhir
         static string connString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
         MySqlConnection conn = new MySqlConnection(connString);
 
+        private void FormPelanggan_Load(object sender, EventArgs e)
+        {
+            updateForm();
+        }
+
+
         public ProfilePelanggan(List<string> list)
         {
             InitializeComponent();
@@ -48,6 +54,7 @@ namespace Project_Akhir
                 {
                     nama_user.Text = reader.GetString("nama");
                     username_user.Text = reader.GetString("username");
+                    password_user.Text = reader.GetString("password");
                     telepon_user.Text = reader.GetString("telepon");
                     alamat_user.Text = reader.GetString("alamat");
                 }

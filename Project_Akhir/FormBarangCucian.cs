@@ -25,18 +25,18 @@ namespace Project_Akhir
         {
             string query = "SELECT * FROM barang_cucian";
             MySqlCommand command = new MySqlCommand(query, conn);
-            MySqlDataReader read;
+            MySqlDataReader reader;
             try
             {
                 listView1.Items.Clear();
                 conn.Open();
-                read = command.ExecuteReader();
+                reader = command.ExecuteReader();
                 int i = 1;
-                while (read.Read())
+                while (reader.Read())
                 {
-                //    string[] row = { i++, read.GetString(1), read.GetString(2)};
-                //    var listViewItem = new ListViewItem(row);
-                //    listView1.Items.Add(listViewItem);
+                    string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2) };
+                    var listViewItem = new ListViewItem(row);
+                    listView1.Items.Add(listViewItem);
                 }
             }
             catch (Exception ex)
@@ -51,19 +51,17 @@ namespace Project_Akhir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "insert into barang_cucian (id, nama, harga) value (@id, @nama, @harga)";
+            string query = "insert into barang_cucian (nama, harga) value (@nama, @harga)";
             MySqlCommand command = new MySqlCommand(query, conn);
 
             command.CommandTimeout = 60;
 
             try
             {
-//                command.Parameters.AddWithValue("@id", textBox1.Text);
                 command.Parameters.AddWithValue("@nama", textBox2.Text);
                 command.Parameters.AddWithValue("@harga", textBox3.Text);
                 conn.Open();
                 command.ExecuteNonQuery();
-                conn.Close();
 
                 MessageBox.Show("Data berhasil ditambahkan");
 
@@ -71,6 +69,10 @@ namespace Project_Akhir
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
 
             FormBarangCucian_Load(sender, e);
@@ -90,7 +92,6 @@ namespace Project_Akhir
                 command.Parameters.AddWithValue("@harga", textBox3.Text);
                 conn.Open();
                 command.ExecuteNonQuery();
-                conn.Close();
 
                 MessageBox.Show("Data berhasil diubah");
 
@@ -98,6 +99,10 @@ namespace Project_Akhir
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
 
             FormBarangCucian_Load(sender, e);
@@ -124,7 +129,6 @@ namespace Project_Akhir
                 command.Parameters.AddWithValue("@no", id);
                 conn.Open();
                 command.ExecuteNonQuery();
-                conn.Close();
 
                 MessageBox.Show("Data berhasil dihapus");
 
@@ -132,6 +136,10 @@ namespace Project_Akhir
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
 
             FormBarangCucian_Load(sender, e);
