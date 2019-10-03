@@ -28,20 +28,10 @@ namespace Project_Akhir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE pemesanan SET tipe_cucian = @tipe, tanggal_masuk = @tglmsk, tanggal_keluar = @tglklr, barang_cucian = @jenis WHERE id_pelanggan = @id";
+            string query = "INSERT INTO pemesanan (id_pelanggan, tipe_cucian, tanggal_masuk, barang_cucian) VALUES(@id, @tipe, @tglmsk, @jenis)";
             string queryID = "SELECT id_pelanggan FROM pelanggan WHERE username = @user";
 
             int id_pelanggan = 0;
-
-            DateTime date2;
-            if (comboBox2.SelectedIndex.ToString() == "Pakaian")
-            {
-                date2 = dateTimePicker1.Value.AddDays(3);
-            }
-            else
-            {
-                date2 = dateTimePicker1.Value.AddDays(4);
-            }
 
             MySqlCommand command = new MySqlCommand(query, conn);
             MySqlCommand commandID = new MySqlCommand(queryID, conn);
@@ -50,7 +40,6 @@ namespace Project_Akhir
 
             command.Parameters.AddWithValue("@tipe", comboBox1.SelectedItem.ToString());
             command.Parameters.AddWithValue("@tglmsk", dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
-            command.Parameters.AddWithValue("@tglklr", date2.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
             command.Parameters.AddWithValue("@jenis", comboBox2.SelectedItem.ToString());
 
             commandID.CommandTimeout = 60;
@@ -74,7 +63,30 @@ namespace Project_Akhir
                 command.ExecuteNonQuery();
                 conn.Close();
 
-                MessageBox.Show("Data berhasil Diupdate");
+                MessageBox.Show("Berhasil memesan");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void FormPemesananPelanggan_Load(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM barang_cucian";
+            MySqlCommand commandDatabase = new MySqlCommand(query, conn);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                conn.Open();
+                reader = commandDatabase.ExecuteReader();
+                while (reader.Read())
+                {
+                    string nama = reader.GetString("nama");
+                    comboBox2.Items.Add(nama);
+                }
+                conn.Close();
             }
             catch (Exception ex)
             {

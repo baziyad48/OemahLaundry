@@ -199,11 +199,6 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Pakaian",
-            "Selimut",
-            "Seprei",
-            "Boneka"});
             this.comboBox3.Location = new System.Drawing.Point(109, 60);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(200, 21);
