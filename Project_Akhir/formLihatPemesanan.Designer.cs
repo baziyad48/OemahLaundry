@@ -59,6 +59,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -166,7 +168,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 82);
+            this.label3.Location = new System.Drawing.Point(3, 115);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 17);
@@ -175,7 +177,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(655, 187);
+            this.textBox1.Location = new System.Drawing.Point(655, 223);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(202, 22);
@@ -184,7 +186,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 117);
+            this.label4.Location = new System.Drawing.Point(3, 150);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 17);
@@ -194,7 +196,7 @@
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(655, 226);
+            this.textBox2.Location = new System.Drawing.Point(655, 256);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 11);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(202, 22);
@@ -203,7 +205,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 152);
+            this.label5.Location = new System.Drawing.Point(3, 185);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 17);
@@ -212,7 +214,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(655, 259);
+            this.dateTimePicker1.Location = new System.Drawing.Point(655, 289);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 10);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(202, 22);
@@ -222,7 +224,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 185);
+            this.label6.Location = new System.Drawing.Point(3, 218);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 17);
@@ -231,6 +233,7 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.Controls.Add(this.label7);
             this.flowLayoutPanel2.Controls.Add(this.label11);
             this.flowLayoutPanel2.Controls.Add(this.label12);
             this.flowLayoutPanel2.Controls.Add(this.label3);
@@ -243,13 +246,13 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(139, 230);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(139, 268);
             this.flowLayoutPanel2.TabIndex = 17;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 16);
+            this.label11.Location = new System.Drawing.Point(3, 49);
             this.label11.Margin = new System.Windows.Forms.Padding(3, 6, 3, 10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(101, 17);
@@ -259,7 +262,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 49);
+            this.label12.Location = new System.Drawing.Point(3, 82);
             this.label12.Margin = new System.Windows.Forms.Padding(3, 6, 3, 10);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(83, 17);
@@ -279,10 +282,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(608, 354);
+            this.button2.Location = new System.Drawing.Point(608, 374);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 63);
+            this.button2.Size = new System.Drawing.Size(119, 43);
             this.button2.TabIndex = 22;
             this.button2.Text = "Simpan";
             this.button2.UseVisualStyleBackColor = true;
@@ -290,10 +293,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(738, 354);
+            this.button3.Location = new System.Drawing.Point(738, 374);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 63);
+            this.button3.Size = new System.Drawing.Size(119, 43);
             this.button3.TabIndex = 23;
             this.button3.Text = "Hapus";
             this.button3.UseVisualStyleBackColor = true;
@@ -302,7 +305,7 @@
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(655, 108);
+            this.textBox4.Location = new System.Drawing.Point(655, 157);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(202, 22);
             this.textBox4.TabIndex = 24;
@@ -310,16 +313,16 @@
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(655, 151);
+            this.textBox5.Location = new System.Drawing.Point(655, 187);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(202, 22);
             this.textBox5.TabIndex = 25;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(466, 354);
+            this.button4.Location = new System.Drawing.Point(466, 374);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 63);
+            this.button4.Size = new System.Drawing.Size(129, 43);
             this.button4.TabIndex = 26;
             this.button4.Text = "Hitung Harga";
             this.button4.UseVisualStyleBackColor = true;
@@ -332,16 +335,35 @@
             "Belum Diproses",
             "Sedang Diproses",
             "Selesai"});
-            this.comboBox1.Location = new System.Drawing.Point(655, 294);
+            this.comboBox1.Location = new System.Drawing.Point(655, 324);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(202, 24);
             this.comboBox1.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 16);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 6, 3, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 17);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "ID Pemesanan";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(655, 124);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(202, 22);
+            this.textBox3.TabIndex = 28;
             // 
             // FormLihatPemesanan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 450);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox5);
@@ -400,5 +422,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

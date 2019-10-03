@@ -206,7 +206,7 @@
             // 
             this.rb_umum.AutoSize = true;
             this.rb_umum.Checked = true;
-            this.rb_umum.Location = new System.Drawing.Point(675, 202);
+            this.rb_umum.Location = new System.Drawing.Point(900, 249);
             this.rb_umum.Name = "rb_umum";
             this.rb_umum.Size = new System.Drawing.Size(67, 21);
             this.rb_umum.TabIndex = 23;

@@ -120,11 +120,12 @@ namespace Project_Akhir
 
         private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            new FormLihatPelanggan().Show();
+            /*
             string tipe = getTipePetugas();
             switch (tipe)
             {
                 case "admin":
-                    new FormLihatPelanggan().Show();
                     break;
 
                 case "umum":
@@ -135,6 +136,7 @@ namespace Project_Akhir
                     MessageBox.Show("Anda tidak memiliki hak akses pada fitur ini");
                     break;
             }
+            */
         }
     }
 }

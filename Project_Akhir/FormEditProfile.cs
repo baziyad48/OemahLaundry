@@ -22,15 +22,21 @@ namespace Project_Akhir
         {
             InitializeComponent();
             userData = list;
+            refresh(userData);
+        }
+
+        private void refresh(List<string> list)
+        {
             tb_nama.Text = list[1];
             tb_password.Text = list[3];
             tb_telepon.Text = list[4];
             tb_alamat.Text = list[5];
+            tb_username.Text = list[2];
         }
 
         private void btn_simpan_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE pelanggan SET nama=@nama, password=@password, telepon=@telepon, alamat=@alamat WHERE id_pelanggan=@id";
+            string query = "UPDATE pelanggan SET nama=@nama, username=@username, password=@password, telepon=@telepon, alamat=@alamat WHERE id_pelanggan=@id";
 
             List<string> data = new List<string>();
 
@@ -42,6 +48,7 @@ namespace Project_Akhir
             {
                 conn.Open();
                 cmd.Parameters.AddWithValue("@nama", tb_nama.Text);
+                cmd.Parameters.AddWithValue("@username", tb_username.Text);
                 cmd.Parameters.AddWithValue("@password", tb_password.Text);
                 cmd.Parameters.AddWithValue("@telepon", tb_telepon.Text);
                 cmd.Parameters.AddWithValue("@alamat", tb_alamat.Text);
@@ -51,11 +58,14 @@ namespace Project_Akhir
 
                 data.Add(userData[0]);
                 data.Add(tb_nama.Text);
+                data.Add(tb_username.Text);
                 data.Add(tb_password.Text);
                 data.Add(tb_telepon.Text);
                 data.Add(tb_alamat.Text);
 
+
                 MessageBox.Show("Data berhasil diubah");
+                refresh(data);
             }
             catch (Exception ex)
             {
@@ -71,6 +81,11 @@ namespace Project_Akhir
         private void btn_batal_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void FormEditProfile_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

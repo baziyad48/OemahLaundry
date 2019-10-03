@@ -54,6 +54,7 @@ namespace Project_Akhir
                 {
                     nama_user.Text = reader.GetString("nama");
                     username_user.Text = reader.GetString("username");
+                    password_user.Text = reader.GetString("password");
                     telepon_user.Text = reader.GetString("telepon");
                     alamat_user.Text = reader.GetString("alamat");
                 }
