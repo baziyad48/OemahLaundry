@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,7 +45,7 @@ namespace Project_Akhir
         private void button2_Click(object sender, EventArgs e)
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
-            string query = "UPDATE pemesanan SET berat = '" + textBox1.Text + "', harga = '" + textBox2.Text + "', tanggal_keluar = '"+ dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + "', `status` = '" + textBox3.Text + "' WHERE id_pemesanan = " + id;
+            string query = "UPDATE pemesanan SET berat = '" + textBox1.Text + "', harga = '" + textBox2.Text + "', tanggal_keluar = '"+ dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + "', `status` = '" + comboBox1.Text + "' WHERE id_pemesanan = " + id;
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -149,7 +150,6 @@ namespace Project_Akhir
         {
             textBox1.Text = listView1.SelectedItems[0].SubItems[5].Text;
             textBox2.Text = listView1.SelectedItems[0].SubItems[6].Text;
-            textBox3.Text = listView1.SelectedItems[0].SubItems[9].Text;
             textBox4.Text = listView1.SelectedItems[0].SubItems[4].Text;
             textBox5.Text = listView1.SelectedItems[0].SubItems[3].Text;
             id = listView1.SelectedItems[0].SubItems[0].Text;
@@ -194,6 +194,51 @@ namespace Project_Akhir
 
                 databaseConnection.Clone();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cobaHitung()
+        {
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            string query = "SELECT harga FROM barang_cucian WHERE nama = @nama";
+            MySqlCommand command = new MySqlCommand(query, databaseConnection);
+            command.CommandTimeout = 60;
+            MySqlDataReader reader;
+            int barang_cucian = 0;
+            int tipe_cucian = 0;
+            int total = 0;
+
+            try
+            {
+                
+                databaseConnection.Open();
+                command.Parameters.AddWithValue("@nama", textBox1.Text);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    barang_cucian = int.Parse(reader.GetString("harga"));
+
+                }
+                databaseConnection.Close();
+
+                total = barang_cucian * int.Parse(textBox1.Text);
+
+                if (textBox5.Text.Equals("Cuci Kering"))
+                {
+                    tipe_cucian = 3000;
+                }
+                else if (textBox5.Text.Equals("Cuci Setrika"))
+                {
+                    tipe_cucian = 4000;
+                }
+
+                total += tipe_cucian;
+                textBox2.Text = "" + total;
             }
             catch (Exception ex)
             {

@@ -94,5 +94,13 @@ namespace Project_Akhir
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread th = new Thread(openFormPilihRole);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
     }
 }

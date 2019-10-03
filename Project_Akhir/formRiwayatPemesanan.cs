@@ -28,7 +28,9 @@ namespace Project_Akhir
         {
             listView1.Items.Clear();
 
-            string query = "SELECT pm.id_pemesanan, pt.nama, pm.tipe_cucian, pm.barang_cucian, pm.berat, pm.harga, pm.tanggal_masuk, pm.tanggal_keluar, pm.`status` FROM pemesanan pm inner join petugas pt on pt.id_petugas = pm.id_petugas INNER JOIN pelanggan pl on pl.id_pelanggan = pm.id_pelanggan WHERE pl.username='"+username+"'";
+            string query = "SELECT pm.id_pemesanan, pt.nama, pm.tipe_cucian, pm.barang_cucian, pm.berat, pm.harga, pm.tanggal_masuk, pm.tanggal_keluar," +
+                " pm.`status` FROM pemesanan pm inner join petugas pt on pt.id_petugas = pm.id_petugas INNER JOIN pelanggan pl on pl.id_pelanggan = pm.id_pelanggan " +
+                "WHERE pl.username='"+username+"'";
 
             try
             {
@@ -68,7 +70,7 @@ namespace Project_Akhir
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
             finally
             {
