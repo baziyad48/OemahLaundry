@@ -1,25 +1,20 @@
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_Akhir
 {
-    public partial class Profile : Form
+    public partial class ProfilePelanggan : Form
     {
+
         List<string> userData;
         string username;
 
         static string connString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
         MySqlConnection conn = new MySqlConnection(connString);
 
-        public Profile(List<string> list)
+        public ProfilePelanggan(List<string> list)
         {
             InitializeComponent();
             userData = list;

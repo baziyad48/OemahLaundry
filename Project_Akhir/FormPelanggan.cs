@@ -87,7 +87,7 @@ namespace Project_Akhir
             {
                 conn.Close();
             }
-            new Profile(data).Show();
+            new ProfilePelanggan(data).Show();
         }
     }
 }
