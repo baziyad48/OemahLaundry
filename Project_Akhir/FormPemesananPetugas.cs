@@ -96,6 +96,12 @@ namespace Project_Akhir
                 MessageBox.Show(ex.Message);
             }
             hitungTotalHarga();
+            if (comboBox3.Text == "Pakaian")
+            {
+                dateTimePicker2.Value = dateTimePicker1.Value.AddDays(3);
+            }
+            else
+                dateTimePicker2.Value = dateTimePicker1.Value.AddDays(4);
         }
 
         private void hitungBerat(object sender, EventArgs e)
