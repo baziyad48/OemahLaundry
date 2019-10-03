@@ -200,5 +200,50 @@ namespace Project_Akhir
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cobaHitung()
+        {
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            string query = "SELECT harga FROM barang_cucian WHERE nama = @nama";
+            MySqlCommand command = new MySqlCommand(query, databaseConnection);
+            command.CommandTimeout = 60;
+            MySqlDataReader reader;
+            int barang_cucian = 0;
+            int tipe_cucian = 0;
+            int total = 0;
+
+            try
+            {
+                
+                databaseConnection.Open();
+                command.Parameters.AddWithValue("@nama", textBox1.Text);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    barang_cucian = int.Parse(reader.GetString("harga"));
+
+                }
+                databaseConnection.Close();
+
+                total = barang_cucian * int.Parse(textBox1.Text);
+
+                if (textBox5.Text.Equals("Cuci Kering"))
+                {
+                    tipe_cucian = 3000;
+                }
+                else if (textBox5.Text.Equals("Cuci Setrika"))
+                {
+                    tipe_cucian = 4000;
+                }
+
+                total += tipe_cucian;
+                textBox2.Text = "" + total;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

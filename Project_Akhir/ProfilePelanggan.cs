@@ -14,6 +14,12 @@ namespace Project_Akhir
         static string connString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
         MySqlConnection conn = new MySqlConnection(connString);
 
+        private void FormPelanggan_Load(object sender, EventArgs e)
+        {
+            updateForm();
+        }
+
+
         public ProfilePelanggan(List<string> list)
         {
             InitializeComponent();
