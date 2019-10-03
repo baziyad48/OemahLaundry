@@ -26,7 +26,18 @@ namespace Project_Akhir
 
         private void btn_tambah_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO petugas (nama, username, password) VALUES (@nama,@username,@password)";
+            string tipe = "umum";
+            if (rb_admin.Checked)
+            {
+                tipe = "admin";
+            }
+            if (rb_umum.Checked)
+            {
+                tipe = "umum";
+            }
+
+            
+            string query = "INSERT INTO petugas (nama, username, password,tipe) VALUES (@nama,@username,@password,@tipe)";
             try
             {
                 conn.Open();
@@ -35,6 +46,7 @@ namespace Project_Akhir
                 cmd.Parameters.AddWithValue("@nama", tb_nama.Text);
                 cmd.Parameters.AddWithValue("@username", tb_username.Text);
                 cmd.Parameters.AddWithValue("@password", tb_password.Text);
+                cmd.Parameters.AddWithValue("@tipe", tipe);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Data berhasil ditambahkan");
 
@@ -52,7 +64,16 @@ namespace Project_Akhir
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE petugas SET id_petugas = @id, nama=@nama,username = @username, password= @password WHERE id_petugas = @id";
+            string tipe = "umum";
+            if (rb_admin.Checked)
+            {
+                tipe = "admin";
+            }
+            if (rb_umum.Checked)
+            {
+                tipe = "umum";
+            }
+            string query = "UPDATE petugas SET id_petugas = @id, nama=@nama,username = @username, password= @password, tipe=@tipe WHERE id_petugas = @id";
             try
             {
                 conn.Open();
@@ -62,6 +83,7 @@ namespace Project_Akhir
                 cmd.Parameters.AddWithValue("@nama", tb_nama.Text);
                 cmd.Parameters.AddWithValue("@username", tb_username.Text);
                 cmd.Parameters.AddWithValue("@password", tb_password.Text);
+                cmd.Parameters.AddWithValue("@tipe", tipe);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Data berhasil diupdate");
             }
@@ -118,6 +140,7 @@ namespace Project_Akhir
                         listViewItem.SubItems.Add(reader["username"].ToString());
                         listViewItem.SubItems.Add(reader["nama"].ToString());
                         listViewItem.SubItems.Add(reader["password"].ToString());
+                        listViewItem.SubItems.Add(reader["tipe"].ToString());
 
                         list_petugas.Items.Add(listViewItem);
                     }
