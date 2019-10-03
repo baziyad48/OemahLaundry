@@ -34,12 +34,15 @@ namespace Project_Akhir
         }
 
 
-        //Load Combobox petugas
+        //Load Combobox petugas & barang cucian
         private void FormPemesananPetugas_Load(object sender, EventArgs e)
         {
             string query = "SELECT * FROM petugas";
+            string querybarang = "SELECT * FROM barang_cucian";
             MySqlCommand commandDatabase = new MySqlCommand(query, conn);
+            MySqlCommand commandDatabasebarang = new MySqlCommand(querybarang, conn);
             commandDatabase.CommandTimeout = 60;
+            commandDatabasebarang.CommandTimeout = 60;
             MySqlDataReader reader;
             try
             {
@@ -49,6 +52,15 @@ namespace Project_Akhir
                 {
                     string nama = reader.GetString("nama");
                     comboBox1.Items.Add(nama);
+                }
+                conn.Close();
+
+                conn.Open();
+                reader = commandDatabasebarang.ExecuteReader();
+                while (reader.Read())
+                {
+                    string nama = reader.GetString("nama");
+                    comboBox3.Items.Add(nama);
                 }
                 conn.Close();
             }
@@ -62,34 +74,36 @@ namespace Project_Akhir
 
         private void hitungJenis(object sender, EventArgs e)
         {
-            switch (comboBox3.SelectedItem.ToString())
+            string query = "SELECT harga FROM barang_cucian WHERE nama = @nama";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
             {
-                case "Pakaian":
-                    hargaJenis = 2000;
-                    dateTimePicker2.Value = dateTimePicker1.Value.AddDays(3);
-                    break;
-                case "Selimut":
-                    hargaJenis = 5000;
-                    dateTimePicker2.Value = dateTimePicker1.Value.AddDays(4);
-                    break;
-                case "Seprei":
-                    hargaJenis = 3500;
-                    dateTimePicker2.Value = dateTimePicker1.Value.AddDays(4);
-                    break;
-                case "Boneka":
-                    hargaJenis = 8000;
-                    dateTimePicker2.Value = dateTimePicker1.Value.AddDays(4);
-                    break;
-                default:
-                    MessageBox.Show("Tipe Cucian Belum Dipilih!");
-                    break;
+                conn.Open();
+                command.Parameters.AddWithValue("@nama", comboBox3.Text);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    hargaJenis = int.Parse(reader.GetString("harga"));
+
+                }
+                conn.Close();
             }
-            //hitungHarga(sender, e);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             hitungTotalHarga();
         }
 
         private void hitungBerat(object sender, EventArgs e)
         {
+            if (textBox6.Text == "")
+            {
+                return;
+            }
             berat = int.Parse(textBox6.Text);
             hitungTotalHarga();
         }
@@ -108,42 +122,20 @@ namespace Project_Akhir
                     MessageBox.Show("Jenis Cucian Belum Dipilih!");
                     break;
             }
-            //hitungHarga(sender, e);
             hitungTotalHarga();
         }
 
         private void hitungHarga(object sender, EventArgs e)
         {
-            //if (textBox6 == null)
-            //{
-            //    berat = 0;
-            //    hargaTotal = hargaTipe + berat * hargaJenis;
-            //    textBox2.Text = hargaTotal.ToString();
-            //}
-
-            //if(hargaJenis > 0 && hargaTipe > 0 && berat > 0)
-            //{
-            //while (textBox6.Text != null)
-            //{
-            //string brt = textBox6.Text;
-            //berat = int.Parse(brt);
-            //hargaTotal = hargaTipe + berat * hargaJenis;
-            //textBox2.Text = hargaTotal.ToString();
-            //}
-            //} else
-            //{
-
-            //}
             hitungTotalHarga();
         }
 
         private void hitungTotalHarga()
         {
-            if(hargaTipe > 0 && hargaJenis > 0 && berat > 0)
+            if (hargaTipe > 0 && hargaJenis > 0 && berat > 0)
             {
-
-            hargaTotal = hargaTipe + berat * hargaJenis;
-            textBox2.Text = hargaTotal.ToString();
+                hargaTotal = hargaTipe + berat * hargaJenis;
+                textBox2.Text = hargaTotal.ToString();
             }
         }
 
@@ -169,7 +161,7 @@ namespace Project_Akhir
             command.Parameters.AddWithValue("@jenis", comboBox3.SelectedItem.ToString());
             command.Parameters.AddWithValue("@berat", textBox6.Text);
             command.Parameters.AddWithValue("@harga", textBox2.Text);
-            command.Parameters.AddWithValue("@tglmsk", dateTimePicker1.Value.ToString("yyyy-MM-dd",CultureInfo.InvariantCulture));
+            command.Parameters.AddWithValue("@tglmsk", dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
             command.Parameters.AddWithValue("@tglklr", dateTimePicker2.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
 
             commandID.CommandTimeout = 60;
@@ -213,11 +205,5 @@ namespace Project_Akhir
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            hitungTipe(sender, e);
-            hitungJenis(sender, e);
-            hitungHarga(sender, e);
-        }
     }
 }
