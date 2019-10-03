@@ -17,6 +17,7 @@ namespace Project_Akhir
         {
             InitializeComponent();
         }
+
         string id;
         static string connString = "datasource=127.0.0.1;port=3306;username=root;password=;database=oemah_laundry;SslMode=none";
         MySqlConnection conn = new MySqlConnection(connString);
@@ -34,7 +35,7 @@ namespace Project_Akhir
                 int i = 1;
                 while (read.Read())
                 {
-                    string[] row = { i++, read.GetString(1), read.GetString(2)};
+                    string[] row = { i++.ToString(), read.GetString(1), read.GetString(2)};
                     var listViewItem = new ListViewItem(row);
                     listView1.Items.Add(listViewItem);
                 }
@@ -58,7 +59,7 @@ namespace Project_Akhir
 
             try
             {
-                command.Parameters.AddWithValue("@id", textBox1.Text);
+                command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@nama", textBox2.Text);
                 command.Parameters.AddWithValue("@harga", textBox3.Text);
                 conn.Open();
