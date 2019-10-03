@@ -73,7 +73,7 @@ namespace Project_Akhir
 
         private void FormPemesananPelanggan_Load(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM barang_cucian";
+            string query = "SELECT nama FROM barang_cucian";
             MySqlCommand commandDatabase = new MySqlCommand(query, conn);
             commandDatabase.CommandTimeout = 60;
             MySqlDataReader reader;
