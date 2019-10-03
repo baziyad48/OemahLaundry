@@ -77,6 +77,12 @@
     <Compile Include="FormBarangCucian.Designer.cs">
       <DependentUpon>FormBarangCucian.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLihatPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLihatPelanggan.Designer.cs">
+      <DependentUpon>FormLihatPelanggan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLoginPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </Compile>
     <EmbeddedResource Include="EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLihatPelanggan.resx">
+      <DependentUpon>FormLihatPelanggan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoginPelanggan.resx">
       <DependentUpon>FormLoginPelanggan.cs</DependentUpon>

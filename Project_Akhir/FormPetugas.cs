@@ -117,5 +117,24 @@ namespace Project_Akhir
             }
             return tipe;
         }
+
+        private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string tipe = getTipePetugas();
+            switch (tipe)
+            {
+                case "admin":
+                    new FormLihatPelanggan().Show();
+                    break;
+
+                case "umum":
+                    MessageBox.Show("Anda tidak memiliki hak akses pada fitur ini");
+                    break;
+
+                default:
+                    MessageBox.Show("Anda tidak memiliki hak akses pada fitur ini");
+                    break;
+            }
+        }
     }
 }

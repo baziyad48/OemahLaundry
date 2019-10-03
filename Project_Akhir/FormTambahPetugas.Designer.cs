@@ -41,12 +41,12 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.tb_username = new System.Windows.Forms.TextBox();
             this.rb_admin = new System.Windows.Forms.RadioButton();
             this.rb_umum = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btn_hapus
@@ -129,6 +129,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.list_petugas.FullRowSelect = true;
             this.list_petugas.HideSelection = false;
             this.list_petugas.Location = new System.Drawing.Point(16, 63);
             this.list_petugas.Name = "list_petugas";
@@ -157,6 +158,11 @@
             // 
             this.columnHeader3.Text = "Password";
             this.columnHeader3.Width = 88;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Tipe Petugas";
+            this.columnHeader4.Width = 95;
             // 
             // label2
             // 
@@ -188,6 +194,7 @@
             // rb_umum
             // 
             this.rb_umum.AutoSize = true;
+            this.rb_umum.Checked = true;
             this.rb_umum.Location = new System.Drawing.Point(675, 202);
             this.rb_umum.Name = "rb_umum";
             this.rb_umum.Size = new System.Drawing.Size(53, 17);
@@ -204,11 +211,6 @@
             this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 24;
             this.label5.Text = "Tipe Petugas";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Tipe Petugas";
-            this.columnHeader4.Width = 95;
             // 
             // FormTambahPetugas
             // 
